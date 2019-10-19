@@ -4,23 +4,27 @@ import java.util.regex.Pattern;
 
 public class fraze {
     String str;
+    Pattern pattern1 = Pattern.compile("\\s*([a-f0-9]*)\\s*");
+    Pattern pattern = Pattern.compile("\\s*[a-z]+\\s*");
+    
     public fraze(String n){
         str = n;
+
     }
 
 
-    public void check(){
-        Pattern pattern = Pattern.compile("\\s*([a-f0-9]*)\\s*");
-        Matcher matcher = pattern.matcher(str);
+    public int check(){
+
+        Matcher matcher = pattern1.matcher(str);
         boolean found = matcher.matches();
         if(found)
-            System.out.println("данное число является - 16-ичный код ");
+            return 1;
         else
-            System.out.println("данное число является - не 16-ичный код");
+            return 0;
     }
     public void repl(){
 
-        Pattern pattern = Pattern.compile("\\s*[a-z]+\\s*");
+
         String[] words = str.split("\\s+");
         boolean found ;
         String newstr = "";
