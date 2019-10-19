@@ -73,7 +73,10 @@ public class Main {
 
                                 break;
                             case 1:
-                                mainstr4.check();
+                               if(mainstr4.check()==1)
+                                   System.out.println("Является ");
+                               else
+                                   System.out.println("НЕ Является ");
                                 break;
                         }
 
