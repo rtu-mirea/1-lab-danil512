@@ -93,6 +93,8 @@ public class Filee {
                 else
                     mass[i] = new Toy(label,price/2,age1,age2);
 
+                i++;
+
             }
 
 
